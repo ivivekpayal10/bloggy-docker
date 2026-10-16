@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Bloggy</title>
+  <style>
+    body { font-family: system-ui, sans-serif; max-width: 720px; margin: 2rem auto; padding: 0 1rem; }
+    .post { border: 1px solid #ddd; border-radius: 8px; padding: 1rem; margin-bottom: 1rem; }
+    .post h2 { margin: 0 0 .25rem; }
+    .meta { color: #888; font-size: .85rem; }
+  </style>
+</head>
+<body>
+  <h1>Bloggy app</h1>
+
+  <% if (!blogs || blogs.length === 0) { %>
+    <p>No blogs yet.</p>
+  <% } else { %>
+    <% blogs.forEach(function (b) { %>
+      <article class="post">
+        <h2><%= b.title %></h2>
+        <p><%= b.description %></p>
+      </article>
+    <% }); %>
+  <% } %>
+</body>
+</html>
